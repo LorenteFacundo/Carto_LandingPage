@@ -1,0 +1,502 @@
+/* ── Overlay & Modal Shell ─────────────────── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 18, 34, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.modal {
+  width: 100%;
+  max-width: 1040px;
+  height: 88vh;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.06);
+  cursor: default;
+}
+
+/* ── Browser Chrome ─────────────────────────── */
+.browserChrome {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 1rem;
+  background: #e8e8e8;
+  border-bottom: 1px solid #d0d0d0;
+  flex-shrink: 0;
+}
+
+.browserDots {
+  display: flex;
+  gap: 7px;
+  flex-shrink: 0;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.dot:hover { opacity: 0.75; }
+
+.urlBarWrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  background: white;
+  border-radius: 6px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.8125rem;
+  color: #555;
+  font-family: 'Inter', monospace;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.08);
+  max-width: 480px;
+  margin-inline: auto;
+}
+
+.lockIcon { color: #34c759; flex-shrink: 0; }
+.urlBarText { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.closeBtn {
+  width: 28px; height: 28px;
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  color: #666;
+  transition: background 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+
+.closeBtn:hover { background: rgba(0,0,0,0.08); color: #333; }
+
+/* ── Mock Page Scroll Area ──────────────────── */
+.mockupScrollArea {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* ── Mockup Disclaimer Banner ───────────────── */
+.mockupBanner {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #1B2C4E;
+  color: rgba(255,255,255,0.9);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.6rem 1rem;
+  text-align: center;
+}
+
+.bannerIcon { color: #C8973E; font-size: 0.625rem; }
+
+/* ── Generic page nav ───────────────────────── */
+.pageWrap { font-family: 'Inter', sans-serif; }
+
+.pNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.pNavLogo {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.25rem;
+  color: white;
+  font-weight: 500;
+}
+
+.pNavLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.pNavLinks a {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.7);
+  cursor: default;
+  transition: color 0.2s;
+}
+
+.pNavLinks a:hover { color: white; }
+
+/* ── Fake buttons (non-functional, styled) ─── */
+.fakeBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  cursor: default;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.5rem 1.125rem;
+  border-radius: 100px;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.25);
+  transition: background 0.2s;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.fakeBtn:hover { background: rgba(255,255,255,0.22); }
+
+/* ════════════════════════════════════════════ */
+/* PANADERÍA                                   */
+/* ════════════════════════════════════════════ */
+
+.panHero {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+}
+
+.panHero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.panHeroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(40,16,6,0.4) 0%, rgba(40,16,6,0.72) 100%);
+}
+
+.panHeroContent {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  gap: 0.75rem;
+}
+
+.panHeroLabel {
+  font-size: 0.8125rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin: 0;
+}
+
+.panHeroContent h1 {
+  font-family: 'EB Garamond', serif;
+  font-size: 3rem;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.panHeroSub {
+  font-size: 1rem;
+  opacity: 0.88;
+  margin: 0;
+  max-width: 42ch;
+}
+
+.panHeroBtn {
+  background: #7B4A1E !important;
+  border-color: #7B4A1E !important;
+  margin-top: 0.5rem;
+  font-size: 0.9375rem !important;
+  padding: 0.7rem 1.5rem !important;
+}
+
+.panStrip {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  padding: 1.25rem 2rem;
+  background: #fdfbf7;
+  border-bottom: 1px solid #eee;
+}
+
+.panStripItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #555;
+}
+
+.panSection { padding: 4rem 2rem; max-width: 960px; margin: 0 auto; }
+
+.panSectionTitle {
+  font-family: 'EB Garamond', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #3a1a06;
+  margin-bottom: 2rem;
+}
+
+.panGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.panCard {
+  background: #fdfbf7;
+  border: 1px solid #e8e2d6;
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.panCardEmoji { font-size: 2rem; }
+.panCard h3 { font-family: 'EB Garamond', serif; font-size: 1.25rem; color: #3a1a06; margin: 0; }
+.panCard p { font-size: 0.875rem; color: #666; margin: 0; line-height: 1.6; }
+
+.panAbout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #f5ede0;
+}
+
+.panAboutText {
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.panAboutText h2 { font-family: 'EB Garamond', serif; font-size: 2rem; color: #3a1a06; font-weight: 400; }
+.panAboutText p { font-size: 0.9375rem; color: #5a3b23; line-height: 1.7; }
+
+.panAboutImg img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.panCta {
+  background: #7B4A1E;
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.panCta h2 { font-family: 'EB Garamond', serif; font-size: 2rem; font-weight: 400; }
+.panCta p { opacity: 0.8; margin: 0; }
+.panCtaBtn { background: white !important; color: #7B4A1E !important; border-color: white !important; font-size: 0.9375rem !important; padding: 0.75rem 1.75rem !important; }
+
+
+/* ════════════════════════════════════════════ */
+/* PELUQUERIA                                  */
+/* ════════════════════════════════════════════ */
+
+.pelHero {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+}
+
+.pelHeroImg { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.pelHeroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(26,20,41,0.3) 0%, rgba(26,20,41,0.78) 100%);
+}
+
+.pelHeroContent {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  gap: 0.75rem;
+}
+
+.pelHeroLabel { font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.65; }
+.pelHeroContent h1 { font-size: 2.5rem; font-weight: 200; letter-spacing: 0.14em; text-transform: uppercase; margin: 0; }
+.pelHeroSub { opacity: 0.8; margin: 0; }
+.pelHeroBtn { background: white !important; color: #1A1429 !important; border-color: white !important; border-radius: 100px !important; margin-top: 0.5rem; font-size: 0.9375rem !important; padding: 0.7rem 1.5rem !important; }
+
+.pelSection { padding: 4rem 2rem; max-width: 960px; margin: 0 auto; }
+.pelSectionTitle { font-size: 2rem; font-weight: 300; color: #1A1429; margin-bottom: 0.5rem; letter-spacing: 0.02em; }
+.pelSectionSub { font-size: 0.9rem; color: #888; margin-bottom: 2rem; }
+
+.pelServGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.pelServCard {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pelServHeader { display: flex; align-items: baseline; justify-content: space-between; gap: 0.5rem; }
+.pelServHeader h3 { font-size: 1.1rem; font-weight: 600; color: #1A1429; margin: 0; }
+.pelServPrice { font-size: 0.8125rem; font-weight: 600; color: #7E6A9E; white-space: nowrap; }
+.pelServCard p { font-size: 0.875rem; color: #666; line-height: 1.6; margin: 0; flex: 1; }
+.pelServBtn { align-self: flex-start; background: rgba(126,106,158,0.12) !important; color: #7E6A9E !important; border-color: rgba(126,106,158,0.3) !important; font-size: 0.8125rem !important; padding: 0.4rem 0.875rem !important; border-radius: 100px !important; }
+
+.pelGallery { padding: 2rem 2rem 4rem; max-width: 960px; margin: 0 auto; }
+.pelGalleryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.625rem;
+  margin-top: 1.5rem;
+}
+.pelGalleryGrid img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; }
+
+.pelCta {
+  background: #1A1429;
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pelCta h2 { font-size: 1.75rem; font-weight: 300; letter-spacing: 0.04em; }
+.pelCta p { opacity: 0.6; font-size: 0.9rem; }
+.pelCtaBtns { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; }
+.pelCtaBtnWa { background: #25D366 !important; border-color: #25D366 !important; }
+.pelCtaBtnIg { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045) !important; border-color: transparent !important; }
+
+
+/* ════════════════════════════════════════════ */
+/* FERRETERÍA                                  */
+/* ════════════════════════════════════════════ */
+
+.ferHero {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+}
+
+.ferHeroImg { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.ferHeroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(27,58,94,0.88) 0%, rgba(27,58,94,0.5) 100%);
+}
+
+.ferHeroContent {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  padding: 2rem 3rem;
+  gap: 0.75rem;
+  max-width: 580px;
+}
+
+.ferHeroLabel { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.7; }
+.ferHeroContent h1 { font-size: 2.5rem; font-weight: 800; margin: 0; line-height: 1.15; }
+.ferHeroContent > p { opacity: 0.85; font-size: 1rem; margin: 0; }
+.ferHeroActions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.ferHeroBtn { background: white !important; color: #1B3A5E !important; border-color: white !important; font-weight: 700 !important; }
+.ferHeroBtnSec { background: transparent !important; }
+
+.ferStrip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  background: #1B3A5E;
+  padding: 1rem 2rem;
+  gap: 1rem;
+}
+
+.ferStripItem { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8125rem; color: rgba(255,255,255,0.75); }
+
+.ferSection { padding: 4rem 2rem; max-width: 960px; margin: 0 auto; }
+.ferSectionTitle { font-size: 1.75rem; font-weight: 700; color: #1B3A5E; margin-bottom: 1.5rem; }
+
+.ferCatGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.ferCatCard {
+  border: 2px solid #e6edf5;
+  border-radius: 10px;
+  padding: 1.5rem 1.25rem;
+  cursor: default;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.ferCatCard:hover { border-color: #3A6EA8; box-shadow: 0 4px 16px rgba(58,110,168,0.12); }
+.ferCatEmoji { font-size: 1.75rem; }
+.ferCatCard h3 { font-size: 1rem; font-weight: 700; color: #1B3A5E; margin: 0; }
+.ferCatCard p { font-size: 0.8125rem; color: #666; margin: 0; line-height: 1.5; }
+
+.ferAbout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #f0f4f8;
+}
+
+.ferAboutImg img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 360px; }
+
+.ferAboutText {
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.ferAboutText h2 { font-size: 1.75rem; font-weight: 700; color: #1B3A5E; }
+.ferAboutText p { font-size: 0.9375rem; color: #4a5c6e; line-height: 1.7; }
+.ferAboutBtn { background: #1B3A5E !important; border-color: #1B3A5E !important; border-radius: 100px !important; margin-top: 0.5rem; }
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 768px) {
+  .overlay { padding: 0.75rem; }
+  .modal { height: 93vh; border-radius: 10px; }
+  .panAbout, .ferAbout { grid-template-columns: 1fr; }
+  .panAboutImg, .ferAboutImg { display: none; }
+  .pelGalleryGrid { grid-template-columns: repeat(2, 1fr); }
+  .ferHeroContent { padding: 2rem 1.5rem; }
+  .panHeroContent h1, .pelHeroContent h1 { font-size: 2rem; }
+}

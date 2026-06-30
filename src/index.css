@@ -1,0 +1,69 @@
+@import '@fontsource/eb-garamond/400.css';
+@import '@fontsource/eb-garamond/500.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+
+/* ── Design Tokens ── */
+:root {
+  --navy:      #1B2C4E;
+  --navy-deep: #111C33;
+  --sky:       #3A6EA8;
+  --gold:      #C8973E;
+  --gold-dim:  rgba(200, 151, 62, 0.15);
+  --parchment: #F4EFE5;
+  --ink:       #1A1929;
+  --ink-muted: #4A4A6A;
+  --white:     #FAFAF8;
+  --white-dim: rgba(250, 250, 248, 0.08);
+
+  --text-display: clamp(2.8rem, 6vw, 4.5rem);
+  --text-h2:      clamp(2rem, 4vw, 2.75rem);
+  --text-h3:      1.375rem;
+  --text-body:    1.0625rem;
+  --text-small:   0.875rem;
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: var(--text-body);
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--parchment);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; font-family: inherit; border: none; background: none; }
