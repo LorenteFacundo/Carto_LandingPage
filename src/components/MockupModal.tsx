@@ -296,6 +296,78 @@ function FerretePage() {
   )
 }
 
+/* ─── CLUB SOCIAL Y DEPORTIVO JUVENIL DE LLAVALLOL ─── */
+function ClubPage() {
+  return (
+    <div className={styles.pageWrap}>
+      <MockupBanner />
+
+      {/* Nav */}
+      <nav className={styles.pNav} style={{ background: '#1b5e20' }}>
+        <span className={styles.pNavLogo}>⚽ Club S. y D. Juvenil</span>
+        <div className={styles.pNavLinks}>
+          <a>Actividades</a>
+          <a>Historia</a>
+          <a>Asociarse</a>
+          <FakeButton>Escribinos</FakeButton>
+        </div>
+      </nav>
+
+      {/* Hero */}
+      <div className={styles.clubHero}>
+        <img
+          src="/club-photo.jpg"
+          alt="Club Social y Deportivo Juvenil de Llavallol"
+          className={styles.clubHeroImg}
+        />
+        <div className={styles.clubHeroOverlay} />
+        <div className={styles.clubHeroContent}>
+          <p className={styles.clubHeroLabel}>Llavallol • Filial Banfield</p>
+          <h1>Club Social y Deportivo Juvenil</h1>
+          <p className={styles.clubHeroSub}>El espacio deportivo y social de las familias de Llavallol desde hace décadas.</p>
+          <FakeButton className={styles.clubHeroBtn}>Ver Actividades ↓</FakeButton>
+        </div>
+      </div>
+
+      {/* Info Strip */}
+      <div className={styles.clubStrip}>
+        <div className={styles.clubStripItem}><span>📍</span><span>Magallanes 566, Llavallol</span></div>
+        <div className={styles.clubStripItem}><span>📞</span><span>011 4298-0447</span></div>
+        <div className={styles.clubStripItem}><span>🏆</span><span>Filial Oficial del Club Atlético Banfield</span></div>
+      </div>
+
+      {/* Actividades */}
+      <div className={styles.clubSection}>
+        <h2 className={styles.clubSectionTitle}>Actividades y Deportes</h2>
+        <div className={styles.clubGrid}>
+          {[
+            { emoji: '⚽', name: 'Fútbol Infantil & Juvenil', desc: 'Entrenamiento formativo, torneos locales y liga oficial.' },
+            { emoji: '🛼', name: 'Patín Artístico', desc: 'Clases recreativas y de competencia para todas las edades.' },
+            { emoji: '🥋', name: 'Taekwondo', desc: 'Disciplina, defensa personal y desarrollo físico integral.' },
+            { emoji: '♟️', name: 'Ajedrez', desc: 'Talleres de estrategia y pensamiento analítico para chicos y adultos.' },
+          ].map((a) => (
+            <div key={a.name} className={styles.clubCard}>
+              <span className={styles.clubCardEmoji}>{a.emoji}</span>
+              <h3>{a.name}</h3>
+              <p>{a.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Historia */}
+      <div className={styles.clubAbout}>
+        <div className={styles.clubAboutText}>
+          <h2>Un club con historia en Llavallol</h2>
+          <p>El Club Social y Deportivo Juvenil es un pilar social en el barrio. Con el correr de los años, nos convertimos en filial del Club Atlético Banfield, lo que nos permite potenciar a los jóvenes deportistas de la zona sur.</p>
+          <p>Nuestra misión sigue siendo la misma: sacar a los chicos de la calle mediante el deporte, brindar un espacio de contención para las familias y promover los valores del juego limpio y la camaradería.</p>
+          <FakeButton className={styles.clubAboutBtn}>Asociarse al Club</FakeButton>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 /* ─── MODAL WRAPPER ──────────────────────────── */
 export default function MockupModal({ selected, onClose }: MockupModalProps) {
   useEffect(() => {
@@ -313,6 +385,7 @@ export default function MockupModal({ selected, onClose }: MockupModalProps) {
       case 'panaderia': return <PanaderiaPage />
       case 'peluqueria': return <PeluqueriaPage />
       case 'ferreteria': return <FerretePage />
+      case 'club-juvenil': return <ClubPage />
       default: return null
     }
   }
