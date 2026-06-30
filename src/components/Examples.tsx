@@ -38,17 +38,6 @@ const examples = [
     bg: 'linear-gradient(135deg, #0D1B2A 0%, #1B3A5E 100%)',
     icon: '🔧',
   },
-  {
-    id: 'club-juvenil',
-    name: 'Club S. y D. Juvenil de Llavallol',
-    neighborhood: 'Llavallol',
-    tag: 'Club Social',
-    tagColor: '#28a745',
-    description: 'Club histórico afiliado a Banfield. Sin web ni redes. Diseñamos una propuesta con actividades y socios online.',
-    accent: '#28a745',
-    bg: 'linear-gradient(135deg, #0b1a10 0%, #1b5e20 100%)',
-    icon: '⚽',
-  },
 ]
 
 export default function Examples() {

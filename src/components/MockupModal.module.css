@@ -490,102 +490,6 @@
 .ferAboutText p { font-size: 0.9375rem; color: #4a5c6e; line-height: 1.7; }
 .ferAboutBtn { background: #1B3A5E !important; border-color: #1B3A5E !important; border-radius: 100px !important; margin-top: 0.5rem; }
 
-/* ─── CLUB JUVENIL ─────────────────────────── */
-.clubHero {
-  position: relative;
-  height: 420px;
-  overflow: hidden;
-}
-
-.clubHeroImg { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-.clubHeroOverlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(11,26,16,0.5) 0%, rgba(11,26,16,0.85) 100%);
-}
-
-.clubHeroContent {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  padding: 2rem;
-  gap: 0.75rem;
-}
-
-.clubHeroLabel { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.8; color: #81c784; }
-.clubHeroContent h1 { font-family: 'EB Garamond', serif; font-size: 3rem; font-weight: 400; margin: 0; line-height: 1.1; }
-.clubHeroSub { opacity: 0.85; margin: 0; max-width: 46ch; }
-.clubHeroBtn { background: #1b5e20 !important; border-color: #1b5e20 !important; margin-top: 0.5rem; }
-
-.clubStrip {
-  display: flex;
-  justify-content: center;
-  gap: 2.5rem;
-  flex-wrap: wrap;
-  padding: 1.25rem 2rem;
-  background: #f1f8e9;
-  border-bottom: 1px solid #dcedc8;
-}
-
-.clubStripItem {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.875rem;
-  color: #33691e;
-  font-weight: 500;
-}
-
-.clubSection { padding: 4rem 2rem; max-width: 960px; margin: 0 auto; }
-.clubSectionTitle { font-family: 'EB Garamond', serif; font-size: 2rem; font-weight: 400; color: #1b5e20; margin-bottom: 2rem; }
-
-.clubGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.25rem;
-}
-
-.clubCard {
-  background: #f1f8e9;
-  border: 1px solid #dcedc8;
-  border-radius: 10px;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.clubCardEmoji { font-size: 2rem; }
-.clubCard h3 { font-family: 'EB Garamond', serif; font-size: 1.25rem; color: #1b5e20; margin: 0; }
-.clubCard p { font-size: 0.875rem; color: #555; margin: 0; line-height: 1.6; }
-
-.clubAbout {
-  background: #e8f5e9;
-  padding: 4rem 3rem;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 4rem;
-  border-radius: 12px;
-  border: 1px solid #c8e6c9;
-}
-
-.clubAboutText {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  align-items: center;
-}
-
-.clubAboutText h2 { font-family: 'EB Garamond', serif; font-size: 2rem; color: #1b5e20; font-weight: 400; }
-.clubAboutText p { font-size: 0.9375rem; color: #2e7d32; line-height: 1.7; max-width: 60ch; }
-.clubAboutBtn { background: #1b5e20 !important; border-color: #1b5e20 !important; font-size: 0.9375rem !important; padding: 0.75rem 1.75rem !important; margin-top: 1rem; }
-
 /* ── Responsive ─────────────────────────────── */
 @media (max-width: 768px) {
   .overlay { padding: 0.75rem; }
@@ -594,5 +498,5 @@
   .panAboutImg, .ferAboutImg { display: none; }
   .pelGalleryGrid { grid-template-columns: repeat(2, 1fr); }
   .ferHeroContent { padding: 2rem 1.5rem; }
-  .panHeroContent h1, .pelHeroContent h1, .clubHeroContent h1 { font-size: 2rem; }
+  .panHeroContent h1, .pelHeroContent h1 { font-size: 2rem; }
 }
